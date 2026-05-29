@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Energy Minus | EMIOS - Inteligencia Energética para la Mejora de
+      Eficiencia
+    </title>
+    <meta
+      name="description"
+      content="EMIOS: Herramienta fundamental para la mejora de la eficiencia energética. Plataforma de monitorización y análisis inteligente para empresas."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              gradient: "gradient 3s ease infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              gradient: {
+                "0%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+                "100%": { backgroundPosition: "0% 50%" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .bg-gradient-animate {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <!-- Logo: cambia "logo.png" por el nombre de tu archivo -->
+        <div class="flex items-center gap-2">
+          <img
+            src="logo.png"
+            alt="Energy Minus"
+            class="h-10 w-auto"
+            onerror="this.style.display = 'none'"
+          />
+          <span
+            class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+          >
+            ENERGY MINUS
+          </span>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+          <a href="#inicio" class="hover:text-cyan-400 transition">Inicio</a>
+          <a href="#que-es" class="hover:text-cyan-400 transition"
+            >¿Qué es EMIOS?</a
+          >
+          <a href="#funcionalidades" class="hover:text-cyan-400 transition"
+            >Funcionalidades</a
+          >
+          <a href="#para-quien" class="hover:text-cyan-400 transition"
+            >¿Para quién?</a
+          >
+          <a href="#demo" class="hover:text-cyan-400 transition">Demo</a>
+          <button
+            class="px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-transform"
+          >
+            Solicitar demo
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section
+      id="inicio"
+      class="min-h-screen flex items-center relative overflow-hidden pt-20"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-black via-blue-950/20 to-black"
+      >
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full blur-[100px] opacity-20 animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-20 animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div
+          class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/10"
+        >
+          <i class="fas fa-microchip text-cyan-400 text-sm"></i>
+          <span class="text-sm">EnergyMinus+ Intelligent Analytics System</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+          <span
+            class="bg-gradient-to-r from-white via-cyan-300 to-blue-400 bg-clip-text text-transparent"
+          >
+            Plataforma de monitorización<br />
+            y análisis inteligente
+          </span>
+        </h1>
+
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-6">
+          Captura, organiza, analiza, gestiona y actúa.
+        </p>
+
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
+          Herramienta para empresas de gestión energética, gestores de
+          infraestructuras, comercializadoras o científicos de datos.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#demo"
+            class="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 inline-block"
+          >
+            Simular ahorro ahora
+            <i
+              class="fas fa-arrow-right group-hover:translate-x-1 transition"
+            ></i>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+        >
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+          >
+            <div class="text-3xl mb-2">📉</div>
+            <div class="text-2xl font-bold text-cyan-400">32%</div>
+            <div class="text-sm text-gray-400">Ahorro promedio</div>
+          </div>
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+          >
+            <div class="text-3xl mb-2">🏭</div>
+            <div class="text-2xl font-bold text-cyan-400">150+</div>
+            <div class="text-sm text-gray-400">Clientes</div>
+          </div>
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+          >
+            <div class="text-3xl mb-2">📊</div>
+            <div class="text-2xl font-bold text-cyan-400">2.4B</div>
+            <div class="text-sm text-gray-400">Datos analizados</div>
+          </div>
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+          >
+            <div class="text-3xl mb-2">⚡</div>
+            <div class="text-2xl font-bold text-cyan-400">24/7</div>
+            <div class="text-sm text-gray-400">Monitorización</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ¿QUÉ ES EMIOS? ============ -->
+    <section id="que-es" class="py-28 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center gap-2 bg-cyan-500/10 rounded-full px-4 py-1 mb-6 border border-cyan-500/20"
+            >
+              <i class="fas fa-question-circle text-cyan-400 text-sm"></i>
+              <span class="text-sm text-cyan-400">Solución integral</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+              ¿Qué es <span class="text-cyan-400">EMIOS</span>?
+            </h2>
+            <p class="text-gray-300 text-lg mb-6">
+              <strong class="text-cyan-400"
+                >Medición inteligente para necesidades reales.</strong
+              >
+            </p>
+            <p class="text-gray-400 mb-6">
+              EMIOS es una plataforma completa para realizar análisis de todos
+              sus recursos energéticos. Diseñada para transformar datos
+              complejos en información accionable que reduce costes y mejora la
+              eficiencia operativa.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <i class="fas fa-check-circle text-cyan-400"></i>
+                <span>Captura automatizada de datos</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-check-circle text-cyan-400"></i>
+                <span>Análisis en tiempo real</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-check-circle text-cyan-400"></i>
+                <span>Recomendaciones basadas en IA</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-20"
+            ></div>
+            <div
+              class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
+              <i class="fas fa-chart-line text-5xl text-cyan-400 mb-4"></i>
+              <p class="text-gray-300 italic">
+                "EMIOS ha reducido nuestros costes energéticos en un 28% durante
+                el primer año de implementación."
+              </p>
+              <p class="text-sm text-gray-500 mt-4">
+                — Director de Operaciones, Industria Alimentaria
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FUNCIONALIDADES COMPLETAS ============ -->
+    <section
+      id="funcionalidades"
+      class="py-28 px-6 bg-gradient-to-b from-black to-blue-950/10"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            ¿Cuáles son sus <span class="text-cyan-400">funcionalidades</span>?
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Todo lo que necesitas para optimizar tu estrategia energética en una
+            sola plataforma
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 1 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105 hover:shadow-xl"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-chart-line text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Análisis horarios y curvas de comportamiento
+            </h3>
+            <p class="text-gray-400">
+              Visualiza patrones de consumo hora por hora. Identifica picos y
+              valles para optimizar tu demanda energética.
+            </p>
+          </div>
+
+          <!-- 2 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-fire-flame-curved text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Análisis diarios y mapas de calor
+            </h3>
+            <p class="text-gray-400">
+              Identifica días y horas de mayor consumo mediante visualización
+              intuitiva de calor. Detecta anomalías al instante.
+            </p>
+          </div>
+
+          <!-- 3 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-chart-simple text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Comparación de variables y regresión
+            </h3>
+            <p class="text-gray-400">
+              Correlaciona consumo con temperatura, producción u otras
+              variables. Modelos predictivos para anticipar tendencias.
+            </p>
+          </div>
+
+          <!-- 4 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-microchip text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Optimización de potencias contratadas
+            </h3>
+            <p class="text-gray-400">
+              Calcula la potencia óptima para cada período. Reduce el término
+              fijo de tu factura sin afectar la operación.
+            </p>
+          </div>
+
+          <!-- 5 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-file-invoice-dollar text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">
+              Simulación de facturas eléctricas
+            </h3>
+            <p class="text-gray-400">
+              Proyecta el impacto de cambios en consumo, potencia o tarifa.
+              Visualiza el ahorro antes de implementar.
+            </p>
+          </div>
+
+          <!-- 6 -->
+          <div
+            class="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105"
+          >
+            <div
+              class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 transition"
+            >
+              <i class="fas fa-robot text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Alertas inteligentes</h3>
+            <p class="text-gray-400">
+              Notificaciones automáticas ante consumos anómalos o cuando se
+              alcanzan umbrales críticos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ¿PARA QUIÉN? (Público objetivo original) ============ -->
+    <section id="para-quien" class="py-28 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            ¿Para <span class="text-cyan-400">quién</span> es EMIOS?
+          </h2>
+          <p class="text-gray-400 text-lg">
+            Una solución versátil para todo el sector energético
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition mx-auto"
+            >
+              <i class="fas fa-building text-3xl text-cyan-400"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">
+              Empresas de gestión energética
+            </h3>
+            <p class="text-gray-500 text-sm">
+              Optimiza la eficiencia de tus clientes con datos precisos
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition mx-auto"
+            >
+              <i class="fas fa-road text-3xl text-cyan-400"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Gestores de infraestructuras</h3>
+            <p class="text-gray-500 text-sm">
+              Controla el consumo de edificios, plantas o centros de datos
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition mx-auto"
+            >
+              <i class="fas fa-bolt text-3xl text-cyan-400"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Comercializadoras</h3>
+            <p class="text-gray-500 text-sm">
+              Ofrece valor añadido a tus clientes con análisis detallado
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition mx-auto"
+            >
+              <i class="fas fa-database text-3xl text-cyan-400"></i>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Científicos de datos</h3>
+            <p class="text-gray-500 text-sm">
+              Accede a datos limpios y estructurados para tus modelos
+            </p>
+          </div>
+        </div>
+
+        <!-- Frase destacada de la web original -->
+        <div class="mt-16 text-center max-w-3xl mx-auto">
+          <div
+            class="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 border border-cyan-500/20"
+          >
+            <i class="fas fa-quote-left text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-xl text-gray-300">
+              Plataforma completa para realizar análisis de todos sus recursos
+              energéticos
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEMO INTERACTIVA REAL ============ -->
+    <section
+      id="demo"
+      class="py-28 px-6 bg-gradient-to-b from-black to-blue-950/20"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Demo <span class="text-cyan-400">interactiva</span>
+          </h2>
+          <p class="text-gray-400 text-lg">
+            Selecciona un mes y descubre cuánto puedes ahorrar
+          </p>
+        </div>
+
+        <div
+          class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 max-w-5xl mx-auto"
+        >
+          <!-- Controles -->
+          <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+            <div class="flex gap-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div class="flex gap-4">
+              <select
+                id="mesSelector"
+                class="bg-black/50 border border-white/20 rounded-lg px-4 py-2 text-sm"
+              >
+                <option value="enero">Enero 2024</option>
+                <option value="febrero">Febrero 2024</option>
+                <option value="marzo">Marzo 2024</option>
+              </select>
+              <button
+                id="btnAnalizar"
+                class="bg-cyan-500/20 border border-cyan-500/50 rounded-lg px-4 py-2 text-sm hover:bg-cyan-500/30 transition"
+              >
+                <i class="fas fa-chart-line mr-2"></i>Analizar
+              </button>
+            </div>
+          </div>
+
+          <!-- Gráfico (canvas para dibujar) -->
+          <div class="bg-black/30 rounded-lg p-4 border border-white/10">
+            <canvas
+              id="consumoChart"
+              width="800"
+              height="300"
+              style="max-width: 100%; height: auto"
+            ></canvas>
+          </div>
+
+          <!-- Resultados del análisis -->
+          <div
+            id="resultados"
+            class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            <div
+              class="bg-black/30 rounded-lg p-3 text-center border border-white/10"
+            >
+              <p class="text-gray-500 text-xs">Consumo total</p>
+              <p class="text-xl font-bold text-cyan-400" id="consumoTotal">
+                0 kWh
+              </p>
+            </div>
+            <div
+              class="bg-black/30 rounded-lg p-3 text-center border border-white/10"
+            >
+              <p class="text-gray-500 text-xs">Coste estimado</p>
+              <p class="text-xl font-bold text-cyan-400" id="costeTotal">0 €</p>
+            </div>
+            <div
+              class="bg-black/30 rounded-lg p-3 text-center border border-white/10"
+            >
+              <p class="text-gray-500 text-xs">Pico máximo</p>
+              <p class="text-xl font-bold text-cyan-400" id="picoMaximo">
+                0 kW
+              </p>
+            </div>
+            <div
+              class="bg-black/30 rounded-lg p-3 text-center border border-white/10"
+            >
+              <p class="text-gray-500 text-xs">Potencia óptima</p>
+              <p class="text-xl font-bold text-green-400" id="potenciaOptima">
+                0 kW
+              </p>
+            </div>
+          </div>
+
+          <!-- Botón optimizar y ahorro -->
+          <div class="mt-6 text-center">
+            <button
+              id="btnOptimizar"
+              class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold hover:shadow-lg transition-all"
+            >
+              <i class="fas fa-microchip mr-2"></i>Optimizar potencia contratada
+            </button>
+            <div id="ahorroBox" class="mt-4 hidden">
+              <div
+                class="bg-green-500/20 border border-green-500/50 rounded-lg p-4"
+              >
+                <i class="fas fa-chart-line text-green-400 mr-2"></i>
+                <span class="text-green-400 font-bold">Ahorro sugerido:</span>
+                <span id="ahorroTexto" class="text-white font-bold"></span>
+                <p class="text-gray-300 text-sm mt-2">
+                  Reduciendo tu potencia contratada al valor óptimo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script para la demo interactiva -->
+    <script>
+      // Datos reales de consumo por hora (0-23h) para cada mes
+      const datosConsumo = {
+        enero: [
+          45, 42, 40, 38, 42, 55, 120, 180, 210, 195, 185, 175, 168, 160, 155,
+          165, 185, 210, 225, 240, 230, 200, 150, 98,
+        ],
+        febrero: [
+          42, 40, 38, 36, 40, 52, 115, 175, 205, 190, 180, 170, 162, 155, 150,
+          160, 180, 205, 220, 235, 225, 195, 145, 95,
+        ],
+        marzo: [
+          38, 36, 34, 32, 36, 48, 110, 170, 200, 185, 175, 165, 158, 150, 145,
+          155, 175, 200, 215, 230, 220, 190, 140, 90,
+        ],
+      };
+
+      let chartInstance = null;
+      let consumoActual = datosConsumo.enero;
+
+      function initChart() {
+        const ctx = document.getElementById("consumoChart").getContext("2d");
+
+        // Si ya existe un gráfico, destruirlo
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+
+        // Crear nuevo gráfico
+        chartInstance = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: [
+              "0h",
+              "1h",
+              "2h",
+              "3h",
+              "4h",
+              "5h",
+              "6h",
+              "7h",
+              "8h",
+              "9h",
+              "10h",
+              "11h",
+              "12h",
+              "13h",
+              "14h",
+              "15h",
+              "16h",
+              "17h",
+              "18h",
+              "19h",
+              "20h",
+              "21h",
+              "22h",
+              "23h",
+            ],
+            datasets: [
+              {
+                label: "Consumo eléctrico (kW)",
+                data: consumoActual,
+                borderColor: "#06b6d4",
+                backgroundColor: "rgba(6, 182, 212, 0.1)",
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointRadius: 3,
+                pointBackgroundColor: "#06b6d4",
+                pointBorderColor: "#fff",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                labels: { color: "#fff" },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return `Consumo: ${context.raw} kW`;
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                grid: { color: "#ffffff20" },
+                title: { display: true, text: "kW", color: "#fff" },
+                ticks: { color: "#fff" },
+              },
+              x: {
+                grid: { color: "#ffffff10" },
+                ticks: { color: "#fff", rotation: 45, maxRotation: 45 },
+              },
+            },
+          },
+        });
+      }
+
+      function actualizarEstadisticas(datos) {
+        const total = datos.reduce((a, b) => a + b, 0);
+        const pico = Math.max(...datos);
+        const coste = (total * 0.15).toFixed(2); // 0.15€/kWh aproximado
+        const potenciaOptima = (pico * 0.85).toFixed(1); // 85% del pico como óptimo
+
+        document.getElementById("consumoTotal").innerHTML = total + " kWh";
+        document.getElementById("costeTotal").innerHTML = coste + " €";
+        document.getElementById("picoMaximo").innerHTML = pico + " kW";
+        document.getElementById("potenciaOptima").innerHTML =
+          potenciaOptima + " kW";
+      }
+
+      // Cambiar mes y actualizar
+      document
+        .getElementById("btnAnalizar")
+        .addEventListener("click", function () {
+          const mes = document.getElementById("mesSelector").value;
+          switch (mes) {
+            case "enero":
+              consumoActual = datosConsumo.enero;
+              break;
+            case "febrero":
+              consumoActual = datosConsumo.febrero;
+              break;
+            case "marzo":
+              consumoActual = datosConsumo.marzo;
+              break;
+          }
+
+          initChart();
+          actualizarEstadisticas(consumoActual);
+          document.getElementById("ahorroBox").classList.add("hidden");
+        });
+
+      // Optimizar y mostrar ahorro
+      document
+        .getElementById("btnOptimizar")
+        .addEventListener("click", function () {
+          const picoActual = Math.max(...consumoActual);
+          const potenciaActual = (picoActual * 1.15).toFixed(1); // Suponemos que tiene 15% más contratado
+          const potenciaOptima = (picoActual * 0.85).toFixed(1);
+          const ahorroAnual = (
+            (potenciaActual - potenciaOptima) *
+            40 *
+            12
+          ).toFixed(2); // 40€/kW año aprox
+
+          document.getElementById("ahorroTexto").innerHTML =
+            `Reduce tu potencia de ${potenciaActual} kW a ${potenciaOptima} kW y ahorra ${ahorroAnual} €/año`;
+          document.getElementById("ahorroBox").classList.remove("hidden");
+        });
+
+      // Inicializar con datos de enero
+      actualizarEstadisticas(datosConsumo.enero);
+    </script>
+
+    <!-- AÑADIR Chart.js (necesario para gráficos) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- ============ TESTIMONIOS ============ -->
+    <section id="testimonios" class="py-28 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Lo que dicen <span class="text-cyan-400">nuestros clientes</span>
+          </h2>
+          <p class="text-gray-400 text-lg">
+            Empresas que ya confían en Energy Minus
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition"
+          >
+            <i class="fas fa-quote-left text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-gray-300 mb-4">
+              "EMIOS nos ha permitido reducir costes un 28% y optimizar nuestra
+              potencia contratada en 5 instalaciones."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                CR
+              </div>
+              <div>
+                <p class="font-bold">Carlos Rodríguez</p>
+                <p class="text-sm text-gray-400">
+                  Director de Operaciones, Industrias López
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition"
+          >
+            <i class="fas fa-quote-left text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-gray-300 mb-4">
+              "La herramienta de simulación de facturas nos ayuda a negociar
+              mejores tarifas con nuestros clientes."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                MG
+              </div>
+              <div>
+                <p class="font-bold">María González</p>
+                <p class="text-sm text-gray-400">Energy Manager, TechCorp</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition"
+          >
+            <i class="fas fa-quote-left text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-gray-300 mb-4">
+              "Los mapas de calor nos permiten identificar patrones de consumo
+              que antes pasaban desapercibidos."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                DM
+              </div>
+              <div>
+                <p class="font-bold">David Martínez</p>
+                <p class="text-sm text-gray-400">CEO, GreenEnergy Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 rounded-3xl p-12 border border-cyan-500/20"
+        >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            ¿Listo para optimizar tu <span class="text-cyan-400">energía</span>?
+          </h2>
+          <p class="text-gray-400 mb-8">
+            Solicita una demo personalizada y descubre cuánto puedes ahorrar
+          </p>
+          <a
+            href="mailto:comercial@energy-minus.es?subject=Información%20sobre%20EMIOS&body=Hola,%20me%20gustaría%20recibir%20más%20información%20sobre%20la%20plataforma%20EMIOS."
+            class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-cyan-500/25 transition-all inline-block"
+          >
+            Contactar con un experto
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="border-t border-white/10 py-12 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div
+              class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4"
+            >
+              ENERGY MINUS
+            </div>
+            <p class="text-gray-500 text-sm">
+              Transformando datos en decisiones energéticas desde 2020
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Plataforma</h4>
+            <ul class="space-y-2 text-gray-500 text-sm">
+              <li>
+                <a href="#funcionalidades" class="hover:text-cyan-400"
+                  >Funcionalidades</a
+                >
+              </li>
+              <li><a href="#demo" class="hover:text-cyan-400">Demo</a></li>
+              <li><a href="#" class="hover:text-cyan-400">Precios</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Recursos</h4>
+            <ul class="space-y-2 text-gray-500 text-sm">
+              <li>
+                <a href="#" class="hover:text-cyan-400">Documentación API</a>
+              </li>
+              <li><a href="#" class="hover:text-cyan-400">Blog</a></li>
+              <li>
+                <a href="#" class="hover:text-cyan-400">Casos de éxito</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Contacto</h4>
+            <ul class="space-y-2 text-gray-500 text-sm">
+              <li><i class="fas fa-envelope mr-2"></i> info@energy-minus.es</li>
+              <li><i class="fas fa-phone mr-2"></i> +34 900 123 456</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="text-center text-gray-500 text-sm pt-8 border-t border-white/10"
+        >
+          <p>
+            &copy; 2024 Energy Minus. Todos los derechos reservados. |
+            Plataforma EMIOS - Herramienta fundamental para la mejora de la
+            eficiencia energética
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
