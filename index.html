@@ -68,7 +68,12 @@
         scroll-behavior: smooth;
       }
     </style>
+
+    
   </head>
+
+  
+
   <body class="bg-black text-white">
     <!-- Navbar -->
     <nav
@@ -133,7 +138,6 @@
         <div
           class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/10"
         >
-          <i class="fas fa-microchip text-cyan-400 text-sm"></i>
           <span class="text-sm">EnergyMinus+ Intelligent Analytics System</span>
         </div>
 
@@ -141,9 +145,13 @@
           <span
             class="bg-gradient-to-r from-white via-cyan-300 to-blue-400 bg-clip-text text-transparent"
           >
-            Plataforma de monitorización<br />
-            y análisis inteligente
+            Transformamos datos en
           </span>
+          <br />
+          <span
+            id="palabra-rotativa"
+            class="inline-block min-w-[290px] sm:min-w-[380px] md:min-w-[450px] text-center bg-gradient-to-r from-white via-cyan-300 to-blue-400 bg-clip-text text-transparent py-3"
+          ></span>
         </h1>
 
         <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-6">
@@ -168,40 +176,46 @@
         </div>
 
         <!-- Stats -->
-        <div
-          class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
-        >
+        <div class="mt-20 mb-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+            class=""
           >
-            <div class="text-3xl mb-2">📉</div>
-            <div class="text-2xl font-bold text-cyan-400">32%</div>
+            <div class="text-5xl font-bold text-white-400">32%</div>
             <div class="text-sm text-gray-400">Ahorro promedio</div>
           </div>
           <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+            class=""
           >
-            <div class="text-3xl mb-2">🏭</div>
-            <div class="text-2xl font-bold text-cyan-400">150+</div>
+            <div class="text-5xl font-bold text-white-400">150+</div>
             <div class="text-sm text-gray-400">Clientes</div>
           </div>
           <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+            class=""
           >
-            <div class="text-3xl mb-2">📊</div>
-            <div class="text-2xl font-bold text-cyan-400">2.4B</div>
+            <div class="text-5xl font-bold text-white-400">2.4B</div>
             <div class="text-sm text-gray-400">Datos analizados</div>
           </div>
           <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-cyan-500/50 transition"
+            class=""
           >
-            <div class="text-3xl mb-2">⚡</div>
-            <div class="text-2xl font-bold text-cyan-400">24/7</div>
+            <div class="text-5xl font-bold text-white-400">24/7</div>
             <div class="text-sm text-gray-400">Monitorización</div>
           </div>
         </div>
       </div>
     </section>
+
+        <!-- ============ IMAGEN MÁS PEQUEÑA CENTRADA ============ -->
+    <div class="w-full flex justify-center my-12 md:my-16 px-4">
+        <div class="w-full max-w-3xl mx-auto">
+            <img 
+                src="over.png" 
+                alt="Energy Minus - Plataforma de monitorización energética"
+                class="w-full h-auto rounded-2xl md:rounded-3xl shadow-2xl"
+                style="object-fit: contain; width: 100%; height: auto;"
+            >
+        </div>
+    </div>
 
     <!-- ============ ¿QUÉ ES EMIOS? ============ -->
     <section id="que-es" class="py-28 px-6">
@@ -244,23 +258,17 @@
             </div>
           </div>
           <div class="relative">
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-20"
-            ></div>
-            <div
-              class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-            >
-              <i class="fas fa-chart-line text-5xl text-cyan-400 mb-4"></i>
-              <p class="text-gray-300 italic">
-                "EMIOS ha reducido nuestros costes energéticos en un 28% durante
-                el primer año de implementación."
-              </p>
-              <p class="text-sm text-gray-500 mt-4">
-                — Director de Operaciones, Industria Alimentaria
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <i class="fas fa-chart-line text-5xl text-cyan-400 mb-4"></i>
+        <p class="text-gray-300 italic">
+            "EMIOS ha reducido nuestros costes energéticos en un 28% durante
+            el primer año de implementación."
+        </p>
+        <p class="text-sm text-gray-500 mt-4">
+            — Director de Operaciones, Industria Alimentaria
+        </p>
+    </div>
+</div>
       </div>
     </section>
 
@@ -745,6 +753,153 @@
       actualizarEstadisticas(datosConsumo.enero);
     </script>
 
+        <!-- ============ INDUSTRIA 4.0 Y EDIFICIOS INTELIGENTES ============ -->
+    <section class="py-28 px-6 bg-gradient-to-b from-black to-blue-950/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 bg-cyan-500/10 rounded-full px-4 py-1 mb-4 border border-cyan-500/20">
+                    <i class="fas fa-microchip text-cyan-400 text-sm"></i>
+                    <span class="text-sm text-cyan-400">Industria 4.0</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Industria 4.0 y <span class="text-cyan-400">Edificios Inteligentes</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+                    EMIOS permite recoger, almacenar, analizar e interactuar en tiempo real con los datos de 
+                    procesos industriales y edificios.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:scale-105">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-pie text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ratios de consumo por pieza</h3>
+                    <p class="text-gray-400">
+                        Monitoriza consumos y costes de luz, agua, gas por pieza producida. Planifica producciones 
+                        según coste y margen de cada serie y modelo.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:scale-105">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-bell text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Alarmas por fallo en máquinas</h3>
+                    <p class="text-gray-400">
+                        Configura alarmas que avisan si una máquina deja de funcionar o no se pone en marcha 
+                        según la programación establecida. Vía email o central receptora.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all hover:scale-105">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-2xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Modelado de comportamiento</h3>
+                    <p class="text-gray-400">
+                        Motor de regresión no lineal para modelar el comportamiento de variables de producción. 
+                        Predice temperatura, humedad o consumo según condiciones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Edificios inteligentes (bloque destacado) -->
+            <div class="mt-12 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-2xl p-8 border border-cyan-500/20">
+                <h3 class="text-2xl font-bold mb-4 text-center">¿Por qué monitorizar <span class="text-cyan-400">edificios inteligentes</span>?</h3>
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="flex gap-3">
+                        <i class="fas fa-users text-2xl text-cyan-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold mb-1">Factor humano</h4>
+                            <p class="text-gray-400 text-sm">Sobreocupación, cambio de uso de salas, reestructuraciones, usos inapropiados... Todo afecta al comportamiento y eficiencia del edificio.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <i class="fas fa-chart-line text-2xl text-cyan-400 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold mb-1">Entropía</h4>
+                            <p class="text-gray-400 text-sm">Los actuadores dejan de funcionar, sensores se descalibran, juntas dejan de sellar... La monitorización detecta fallos a tiempo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ============ CAPACIDADES TÉCNICAS AVANZADAS ============ -->
+    <section class="py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 bg-cyan-500/10 rounded-full px-4 py-1 mb-4 border border-cyan-500/20">
+                    <i class="fas fa-cogs text-cyan-400 text-sm"></i>
+                    <span class="text-sm text-cyan-400">Capacidades técnicas</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Funcionalidades <span class="text-cyan-400">avanzadas</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Todo lo que necesitas para una gestión energética profesional
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-chart-line text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Líneas base y proyectos de ahorro EVO e ISO 50001</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-microchip text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Optimizador de potencias eléctricas y caudales de gas</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-car-battery text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Simulador de batería de condensadores</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-file-invoice text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Simulación de facturas eléctricas, gas y agua</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-check-circle text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Validación automática de cierres de contador</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-chart-simple text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Análisis horarios y diarios con mapas de calor</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-chart-gantt text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Estudios de distribución y regresión no lineal</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-chart-column text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Análisis comparativo (benchmarking) entre instalaciones</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-chart-pie text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Normalización de datos mediante ratios y KPIs</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-tachometer-alt text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Paneles de mandos personalizables por usuario</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-file-pdf text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Informes PDF automáticos por email</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10">
+                    <i class="fas fa-download text-cyan-400 w-6"></i>
+                    <span class="text-gray-300">Exportación de gráficas a CSV, PNG y PDF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- AÑADIR Chart.js (necesario para gráficos) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
@@ -830,7 +985,8 @@
     </section>
 
     <!-- ============ CTA FINAL ============ -->
-    <section class="py-20 px-6">
+    <section class="py-20 px-6" id="CTA">
+      
       <div class="max-w-4xl mx-auto text-center">
         <div
           class="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 rounded-3xl p-12 border border-cyan-500/20"
@@ -875,16 +1031,15 @@
                 >
               </li>
               <li><a href="#demo" class="hover:text-cyan-400">Demo</a></li>
-              <li><a href="#" class="hover:text-cyan-400">Precios</a></li>
+              <li><a href="#CTA" class="hover:text-cyan-400">Precios</a></li>
             </ul>
           </div>
           <div>
             <h4 class="font-bold mb-4">Recursos</h4>
             <ul class="space-y-2 text-gray-500 text-sm">
               <li>
-                <a href="#" class="hover:text-cyan-400">Documentación API</a>
+                <a href="#CTA" class="hover:text-cyan-400">Documentación API</a>
               </li>
-              <li><a href="#" class="hover:text-cyan-400">Blog</a></li>
               <li>
                 <a href="#" class="hover:text-cyan-400">Casos de éxito</a>
               </li>
@@ -909,5 +1064,110 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var palabras = [
+          "decisiones energéticas",
+          "ahorro real",
+          "optimización automática",
+          "previsión inteligente",
+          "control total",
+        ];
+
+        var indice = 0;
+        var elemento = document.getElementById("palabra-rotativa");
+
+        if (!elemento) return;
+
+        // Configuración inicial de transiciones suaves de opacidad y desplazamiento
+        elemento.style.transition =
+          "opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+        elemento.style.opacity = "1";
+        elemento.style.transform = "translateY(0)";
+        elemento.textContent = palabras[0];
+
+        setInterval(function () {
+          // 1. Desvanecer y deslizar sutilmente hacia arriba
+          elemento.style.opacity = "0";
+          elemento.style.transform = "translateY(-16px)";
+
+          // 2. Cambiar palabra y reposicionar abajo mientras el elemento es invisible
+          setTimeout(function () {
+            indice = (indice + 1) % palabras.length;
+            elemento.textContent = palabras[indice];
+
+            // Desactivamos la transición temporalmente para reubicarlo abajo instantáneamente
+            elemento.style.transition = "none";
+            elemento.style.transform = "translateY(12px)";
+
+            // Forzamos un reflujo (reflow) del navegador para que registre el cambio sin animarlo
+            elemento.offsetHeight;
+
+            // Reactivamos la transición y lo deslizamos de regreso al centro
+            elemento.style.transition =
+              "opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+            elemento.style.opacity = "1";
+            elemento.style.transform = "translateY(0)";
+          }, 600); // Tiempo que coincide con la duración de la salida (0.6s)
+        }, 3800); // Intervalo de rotación
+      })();
+    </script>
+
+        <!-- ============ EFECTO DE APARICIÓN AL HACER SCROLL ============ -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        (function() {
+            // Selecciona todas las secciones que quieres que aparezcan
+            const elementos = document.querySelectorAll('section, .reveal-on-scroll');
+            
+            // También añade la clase 'reveal' a secciones principales si no la tienen
+            document.querySelectorAll('section, .grid.md\\:grid-cols-2, .grid.md\\:grid-cols-3, .grid.md\\:grid-cols-4').forEach(el => {
+                if (!el.classList.contains('reveal') && !el.closest('.reveal')) {
+                    el.classList.add('reveal');
+                }
+            });
+            
+            // Añadir clase específica a tarjetas y elementos importantes
+            document.querySelectorAll('.grid > div, .bg-white\\/5, .rounded-2xl').forEach(el => {
+                if (!el.classList.contains('reveal')) {
+                    el.classList.add('reveal');
+                }
+            });
+            
+            // Función para comprobar qué elementos son visibles
+            function checkVisibility() {
+                const windowHeight = window.innerHeight;
+                const revealElements = document.querySelectorAll('.reveal');
+                
+                revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible = rect.top < windowHeight - 100;
+                    
+                    if (isVisible) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Escuchar eventos de scroll y resize
+            window.addEventListener('scroll', checkVisibility);
+            window.addEventListener('resize', checkVisibility);
+            
+            // Comprobar al cargar la página
+            setTimeout(checkVisibility, 100);
+        })();
+    </script>
   </body>
 </html>
